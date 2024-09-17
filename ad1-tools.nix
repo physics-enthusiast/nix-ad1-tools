@@ -1,9 +1,9 @@
 { lib, stdenv, bash, autoreconfHook, pkg-config, which
-, fetchFromGitLab
+, fetchFromGitHub
 }: 
 let
   version = "1.0";
-  src = fetchFromGitLab {
+  src = fetchFromGitHub {
     owner = "al3ks1s";
     repo = "AD1-tools";
     rev = "v${version}";
