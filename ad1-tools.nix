@@ -7,7 +7,7 @@ let
     owner = "al3ks1s";
     repo = "AD1-tools";
     rev = "v${version}";
-    hash = lib.fakeHash;
+    hash = "sha256-KjQCqemMpGQkbqgws0ReQ0PjGesJyAucnorfqkCMxCc=";
   };
 in
 stdenv.mkDerivation {
