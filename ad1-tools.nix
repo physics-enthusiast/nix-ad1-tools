@@ -17,13 +17,9 @@ stdenv.mkDerivation {
   enableParallelBuilding = true;
 
   nativeBuildInputs = [
-  ];
-  buildInputs = [
+    autoreconfHook
   ];
 
-  preConfigure = ''
-    patchShebangs --build ./autogen.sh
-    chmod +x ./autogen.sh
-    ./autogen.sh
-  '';
+  buildInputs = [
+  ];
 }
