@@ -18,6 +18,9 @@ stdenv.mkDerivation {
   inherit version src;
 
   enableParallelBuilding = true;
+  # With fortify it crashes at runtime:
+  #   *** buffer overflow detected ***: terminated
+  #   Aborted (core dumped)
   hardeningDisable = [ "fortify" ];
 
   nativeBuildInputs = [
