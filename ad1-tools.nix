@@ -18,6 +18,7 @@ stdenv.mkDerivation {
   inherit version src;
 
   enableParallelBuilding = true;
+  hardeningDisable = [ "fortify" ];
 
   nativeBuildInputs = [
     libtool
