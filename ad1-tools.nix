@@ -2,8 +2,8 @@
 , fetchFromGitHub
 , openssl
 , zlib
-, fuse
-}: 
+, fuse3
+}:
 let
   version = "1.0";
   src = fetchFromGitHub {
@@ -28,6 +28,10 @@ stdenv.mkDerivation {
     openssl
     zlib
     fuse
+  ];
+
+  configureFlags = [
+    "--with-openssl=${openssl}"
   ];
 
   preAutoreconf = ''
