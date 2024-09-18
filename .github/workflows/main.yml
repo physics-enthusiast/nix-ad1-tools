@@ -27,11 +27,11 @@ jobs:
         os:
           - ubuntu-latest
     runs-on: ${{ matrix.os }}
+    env:
+      ACTION_REF: ${{ github.action_ref }}
+      ACTION_REPO: ${{ github.action_repository }}
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
       - run: |
           nix run github:${{ env.ACTION_REPO }}/${{ env.ACTION_REF }}
-        env:
-          ACTION_REF: ${{ github.action_ref }}
-          ACTION_REPO: ${{ github.action_repository }}
