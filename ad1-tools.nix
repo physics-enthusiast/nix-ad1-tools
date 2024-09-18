@@ -22,16 +22,13 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     libtool
     autoreconfHook
+    pkg-config
   ];
 
   buildInputs = [
     openssl
     zlib
-    fuse
-  ];
-
-  configureFlags = [
-    "--with-openssl=${openssl}"
+    fuse3
   ];
 
   preAutoreconf = ''
