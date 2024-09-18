@@ -1,4 +1,4 @@
-{ lib, stdenv, bash, libtool, autoreconfHook, pkg-config, which
+{ stdenv, libtool, autoreconfHook, pkg-config
 , fetchFromGitHub
 , openssl
 , zlib
