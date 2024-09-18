@@ -17,9 +17,14 @@ stdenv.mkDerivation {
   enableParallelBuilding = true;
 
   nativeBuildInputs = [
+    libtool
     autoreconfHook
   ];
 
   buildInputs = [
   ];
+
+  preAutoreconf = ''
+    libtoolize --force
+  ''
 }
