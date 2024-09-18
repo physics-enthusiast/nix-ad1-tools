@@ -2,7 +2,7 @@
 , fetchFromGitHub
 , openssl
 , zlib
-, fuse3
+, fuse
 }:
 let
   version = "1.0";
@@ -28,10 +28,8 @@ stdenv.mkDerivation {
   buildInputs = [
     openssl
     zlib
-    fuse3
+    fuse
   ];
-
-  NIX_CFLAGS_COMPILE = "-I${fuse3}/include/fuse3";
 
   preAutoreconf = ''
     libtoolize --force
