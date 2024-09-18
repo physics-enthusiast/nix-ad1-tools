@@ -26,5 +26,5 @@ stdenv.mkDerivation {
 
   preAutoreconf = ''
     libtoolize --force
-  ''
+  '';
 }
