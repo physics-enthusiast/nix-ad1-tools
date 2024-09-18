@@ -30,4 +30,4 @@ jobs:
     steps:
       - uses: DeterminateSystems/nix-installer-action@main
       - run: |
-          nix run --no-write-lock-file github:physics-enthusiast/nix-ad1-tools/${{ github.ref }} --help
+          nix run --no-write-lock-file github:physics-enthusiast/nix-ad1-tools/${{ github.ref }} -- --help
