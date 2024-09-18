@@ -31,6 +31,8 @@ stdenv.mkDerivation {
     fuse3
   ];
 
+  NIX_CFLAGS_COMPILE = "-I${fuse3}/include/fuse3";
+
   preAutoreconf = ''
     libtoolize --force
   '';
