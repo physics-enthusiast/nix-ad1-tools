@@ -19,3 +19,16 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@main
       - run: |
           nix build -L -f default.nix ad1-tools
+
+  test-flake:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - run: |
+          nix run github:${{ github.action_repository }}/{{ github.action_ref }}
