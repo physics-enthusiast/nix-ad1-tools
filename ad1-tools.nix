@@ -2,7 +2,7 @@
 , fetchFromGitHub
 , openssl
 , zlib
-
+, fuse
 }: 
 let
   version = "1.0";
@@ -27,6 +27,7 @@ stdenv.mkDerivation {
   buildInputs = [
     openssl
     zlib
+    fuse
   ];
 
   preAutoreconf = ''
