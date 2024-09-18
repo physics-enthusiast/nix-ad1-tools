@@ -1,5 +1,8 @@
 { lib, stdenv, bash, libtool, autoreconfHook, pkg-config, which
 , fetchFromGitHub
+, openssl
+, zlib
+
 }: 
 let
   version = "1.0";
@@ -22,6 +25,8 @@ stdenv.mkDerivation {
   ];
 
   buildInputs = [
+    openssl
+    zlib
   ];
 
   preAutoreconf = ''
