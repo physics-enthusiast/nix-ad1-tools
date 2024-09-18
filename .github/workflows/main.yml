@@ -31,4 +31,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
       - run: |
-          nix run github:${{ github.action_repository }}/${{ github.action_ref }}
+          nix run github:$ACTION_REPO/$ACTION_REF
+        env:
+          ACTION_REF: ${{ github.action_ref }}
+          ACTION_REPO: ${{ github.action_repository }}
