@@ -1,4 +1,4 @@
-{ lib, stdenv, bash, autoreconfHook, pkg-config, which
+{ lib, stdenv, bash, libtool, autoreconfHook, pkg-config, which
 , fetchFromGitHub
 }: 
 let
